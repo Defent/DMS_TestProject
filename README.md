@@ -16,3 +16,5 @@ WHAT DOES THIS NOT HAVE AND WHATS IN DEVELOPMENT:
 - Proper cleanup
 - Mission finish trigger
 - Other stuff
+- AI spawn ammount
+- Ai spawning only when player is x distance to mission.
