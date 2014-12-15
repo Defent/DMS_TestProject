@@ -18,8 +18,8 @@ _missVar = _MainArray select _slct;
 	//diag_log text format ["DMS: Main Mission [%1] is starting.",_varName];
 
 if (_missVar == "MM1") then {
-	[] execVM "mission\missions\MM1.sqf"
+	[] execVM "DMS\mission\missions\MM1.sqf"
 };
 if (_missVar == "MM2") then {
-	[] execVM "mission\missions\MM2.sqf"
+	[] execVM "DMS\mission\missions\MM2.sqf"
 };
