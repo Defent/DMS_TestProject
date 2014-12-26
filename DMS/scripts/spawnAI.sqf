@@ -1,5 +1,3 @@
-
-=======
 /* 
 Creates a soldier.. what more do we need to know?
 @FileOverlordCreatorofAllMasterCommanderAlphandtheOmega: Defent
