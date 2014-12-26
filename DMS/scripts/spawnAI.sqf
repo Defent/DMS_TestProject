@@ -38,11 +38,20 @@ spawnAI = {
 		_soldier allowDammage true;
 	};
 	/*
+<<<<<<< HEAD
 	
+=======
+>>>>>>> origin/master
 	if (side _group != RESISTANCE) {
 	 deleteGroup _x;
 	};
 	*/
+<<<<<<< HEAD
 };
 
 
+=======
+     	};
+};
+
+>>>>>>> origin/master
