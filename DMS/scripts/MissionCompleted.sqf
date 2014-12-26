@@ -1,7 +1,9 @@
 if(isServer) then {
+/*
 private ["_completed","_cleanup"];
 _completed = false;
 _cleanup   = false;
+*/
 
 	MissionCompleted = {
 	
@@ -10,7 +12,7 @@ _cleanup   = false;
 	
 	waitUntil{{isPlayer _x && _x distance _missionPos < 60  } count playableunits > 0}; 
 		
-	_completed	 = true;
+	//_completed	 = true;
 	};
 	
 	MissionCleanup = {
@@ -25,12 +27,14 @@ _cleanup   = false;
 			_this removeAllEventHandlers "Fired";
 			_this removeAllEventHandlers "GetOut";
 			_this removeAllEventHandlers "GetIn";
-			_this removeAllEventHandlers "Local";
+			_this removeAllEventHandlers "Local";,
+			deleteMarker "DMS_MainMarker"; 
+			deleteMarker "DMS_MainDot"; 
 			deleteVehicle _this;
 			deleteGroup (group _this);
 			_this = nil;
 			
-			_cleanup 	 = true;	
+			//_cleanup 	 = true;	
 		};		
 	};
 };

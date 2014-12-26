@@ -5,6 +5,7 @@
 if(isServer) then {
 
 	findSafePos			= compile preprocessFileLineNumbers "mission\scripts\findSafePos.sqf";
+	// will be random boxes later..
 	MM_Box1				= compile preprocessFileLineNumbers "mission\crates\MM_Box1.sqf";
 	DMS_CreateMarker 		= compile preprocessFileLineNumbers "mission\scripts\DMS_CreateMarker.sqf";
 	SpawnAI 			= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";

@@ -1,4 +1,4 @@
-private ["_aiSpawn","_crate","_pos","_playerClose","_mainTimer","_missname","_aiAmmount"];
+private ["_crate","_pos","_missname","_aiAmmount","_missTitle","_missText"];
 
 /*
 _playerClose = false;
@@ -13,7 +13,9 @@ _aiAmmount = 5;
 _missname = "Main Mission 6";
 diag_log format["DMS: Main Mission 6 started at [%1]",_pos];
 
-hint parseText format["Main ========== </br> Mission stuff happens who knows what."];
+_missTitle = "<t color='#ff0000'>Main Mission 6.</t>";
+_missText = "</br> Mission now starting! Check your map!";
+hint parseText (_missTitle + _missText);
 
 // Spawn Marker
 [_pos,_missname] execVM "mission\scripts\DMS_CreateMarker.sqf";
@@ -21,24 +23,18 @@ hint parseText format["Main ========== </br> Mission stuff happens who knows wha
 // Spawn Box
 _crate = createVehicle ["Box_NATO_Support_F",[(_pos select 0) - 10, _pos select 1,0],[], 0, "CAN_COLLIDE"];
 [_crate] execVM "mission\crates\MM_Box1.sqf";
+sleep 2;
+//_crate = [_pos,40,4,2,2] execVM "mission\crates\MM_Box1.sqf";
 
 // spawn AI
+//[_pos,_aiAmmount] call SpawnAI;
 [_pos,_aiAmmount] call SpawnAI;
 
-/*
-
-Loot at 0.2.6 EMS if you want to know how to make detection close to mission.
-
-Detection is to be implemented next update. This is an early access alpha LOL. 
-
-*/
 
 
-sleep 15;
+[_pos] call MissionCompleted;
+call MissionCleanup;
+
 hint parseText format["Mission is over, quitting mission."];
-deleteMarker "DMS_MainMarker"; 
- deleteMarker "DMS_MainDot"; 
-deleteVehicle _crate;
 
-sleep 10;
-execVM "mission\scripts\selectMission.sqf";
+call selectMission;
