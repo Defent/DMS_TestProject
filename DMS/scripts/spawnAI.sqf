@@ -8,7 +8,7 @@ Creates a soldier.. what more do we need to know?
 if (!isServer) exitWith {};
 
 private ["_group", "_pos","_arrUnits","_ammountAI","_soldier"];
-
+_pos 	= _this select 1;
 	
 	
 	_group = createGroup RESISTANCE;
