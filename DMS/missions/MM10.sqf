@@ -20,6 +20,7 @@ hint parseText format["Main ========== </br> Mission stuff happens who knows wha
 
 // Spawn Box
 _crate = createVehicle ["Box_NATO_Support_F",[(_pos select 0) - 10, _pos select 1,0],[], 0, "CAN_COLLIDE"];
+[_crate] execVM "mission\crates\MM_Box1.sqf";
 
 // spawn AI
 [_pos,_aiAmmount] call SpawnAI;
@@ -36,8 +37,8 @@ Detection is to be implemented next update. This is an early access alpha LOL.
 sleep 15;
 hint parseText format["Mission is over, quitting mission."];
 deleteMarker "DMS_MainMarker"; 
- deleteMarker "DMS_MainDot"; 
+deleteMarker "DMS_MainDot"; 
 deleteVehicle _crate;
 
 sleep 10;
-execVM "\mission\selectMissions.sqf";
+execVM "mission\scripts\selectMission.sqf";

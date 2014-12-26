@@ -41,4 +41,4 @@ deleteMarker "DMS_MainMarker";
 deleteVehicle _crate;
 
 sleep 10;
-execVM "\mission\selectMissions.sqf";
+execVM "mission\scripts\selectMission.sqf";

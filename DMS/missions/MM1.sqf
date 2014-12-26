@@ -30,10 +30,9 @@ _crate = createVehicle ["Box_NATO_Support_F",[(_pos select 0) - 10, _pos select 
 [_pos,_aiAmmount] call SpawnAI;
 sleep 2;
 
-waitUntil {
-sleep 5; 
-({isPlayer _x && _x distance _pos <= 30} count playableUnits > 0) && ({alive _x});
-};
+
+[_pos] call MissionCompleted;
+
 
 hint parseText format["Mission is over, quitting mission."];
 deleteMarker "DMS_MainMarker"; 
@@ -41,4 +40,5 @@ deleteMarker "DMS_MainDot";
 deleteVehicle _crate;
 
 sleep 10;
-execVM "\mission\selectMissions.sqf";
+
+execVM "mission\scripts\selectMission.sqf";

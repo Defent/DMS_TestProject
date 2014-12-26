@@ -8,6 +8,8 @@ if(isServer) then {
 	MM_Box1				= compile preprocessFileLineNumbers "mission\crates\MM_Box1.sqf";
 	DMS_CreateMarker 	= compile preprocessFileLineNumbers "mission\scripts\DMS_CreateMarker.sqf";
 	SpawnAI 			= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";
+	selectMission 		= compile preprocessFileLineNumbers "mission\scripts\selectMission.sqf";
+	MissionCompleted 	= compile preprocessFileLineNumbers "mission\scripts\MissionCompleted.sqf";
 	
 	// not fully loaded yet
 	DMS_Loaded 			= false;
