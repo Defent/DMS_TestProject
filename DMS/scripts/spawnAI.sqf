@@ -7,37 +7,45 @@ Creates a soldier.. what more do we need to know?
 
 if (!isServer) exitWith {};
 
-private ["_group", "_pos","_arrUnits","_ammountAI","_soldier"];
-
+private ["_group", "_pos","_arrUnits","_ammountAI","DMS_Ai","_posX","_posY"];
+_pos 	= _this select 1;
+// used for patrols
+//_posX 		= _pos select 0;
+//_posY 		= _pos select 1;
 	
-	
+	// create a group for the unit
 	_group = createGroup RESISTANCE;
-	_group setBehaviour "AWARE";
-	_group setCombatMode "RED";
 
-	_soldier = _group createUnit ["I_Soldier_EPOCH", [(_pos select 0) + 10, _pos select 1, 0], [], 1, "Form"];
-	removeAllAssignedItems _soldier;
-	removeUniform _soldier;
-	removeHeadgear _soldier;
-	_soldier forceAddUniform  "U_ghillie1_uniform";;
-	_soldier addVest "V_RebreatherB"; 
+	// create the unit
+	DMS_Ai = _group createUnit ["IDMS_Ai_EPOCH", [(_pos select 0) + 10, _pos select 1, 0], [], 1, "Form"];
+	removeAllAssignedItems DMS_Ai;
+	removeUniform DMS_Ai;
+	removeHeadgear DMS_Ai;
+	[DMS_Ai] joinSilent _group;
+	
+	// gear and stuff
+	DMS_Ai forceAddUniform  "U_ghillie1_uniform";;
+	DMS_Ai addVest "V_RebreatherB"; 
 	//DMS_AiList addUniform "U_B_Wetsuit";
-	_soldier addGoggles "G_Diving";
-	_soldier addMagazine "20Rnd_556x45_UW_Mag";
-	_soldier addWeapon "arifle_SDAR_F";
-	_soldier addMagazine "20Rnd_556x45_UW_Mag";
-	_soldier addMagazine "20Rnd_556x45_UW_Mag";
+	DMS_Ai addGoggles "G_Diving";
+	DMS_Ai addMagazine "20Rnd_556x45_UW_Mag";
+	DMS_Ai addWeapon "arifle_SDAR_F";
+	DMS_Ai addMagazine "20Rnd_556x45_UW_Mag";
+	DMS_Ai addMagazine "20Rnd_556x45_UW_Mag";
 
-	_soldier setSkill 0.6;
-	_soldier setRank "Private";
-	_soldier enableAI "TARGET";
-	_soldier enableAI "AUTOTARGET";
-	_soldier enableAI "MOVE";
-	_soldier enableAI "ANIM";
-	_soldier disableAI "FSM";
-	_soldier allowDammage true;
+	// behaviour
+	DMS_Ai setBehaviour "AWARE";
+	DMS_Ai setCombatMode "RED";
+	DMS_Ai setSkill 0.6;
+	DMS_Ai setRank "Private";
+	DMS_Ai enableAI "TARGET";
+	DMS_Ai enableAI "AUTOTARGET";
+	DMS_Ai enableAI "MOVE";
+	DMS_Ai enableAI "ANIM";
+	DMS_Ai disableAI "FSM";
+	DMS_Ai allowDammage true;
 	
 	
 	//untested
-	//_soldier setVariable ["LASTLOGOUT_EPOCH", diag_tickTime + 14400000, sanna];
+	//DMS_Ai setVariable ["LASTLOGOUT_EPOCH", diag_tickTime + 14400000, sanna];
 	

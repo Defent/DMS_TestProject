@@ -4,21 +4,19 @@
 
 if(isServer) then {
 
-	findSafePos			= compile preprocessFileLineNumbers "DMS\mission\scripts\findSafePos.sqf";
-	MM_Box1				 = compile preprocessFileLineNumbers "DMS\mission\crates\MM_Box1.sqf";
-	DMS_CreateMarker 	= compile preprocessFileLineNumbers "DMS\mission\scripts\DMS_CreateMarker.sqf";
-	//DZMSAddMinMarker 	= "mission\scripts\DZMSAddMinMarker.sqf";
-	//spawnAI				= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";
-	//DMS_CreateMarker	= compile preprocessFileLineNumbers "mission\scripts\DMS_CreateMarker.sqf";
+	findSafePos			= compile preprocessFileLineNumbers "mission\scripts\findSafePos.sqf";
+	MM_Box1				= compile preprocessFileLineNumbers "mission\crates\MM_Box1.sqf";
+	DMS_CreateMarker 	= compile preprocessFileLineNumbers "mission\scripts\DMS_CreateMarker.sqf";
+	DMS_SpawnAI 		= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";
 	
-	
+	// not fully loaded yet
 	DMS_Loaded 			= false;
 	
-	execVM 	 "DMS\mission\scripts\DMS_Config.sqf";
+	execVM 	 "mission\scripts\DMS_Config.sqf";
 	waitUntil {DMS_Loaded};
 
-	execVM "DMS\mission\scripts\selectMission.sqf";
+	execVM "mission\scripts\selectMission.sqf";
 	
 	
-	diag_log "DMS: Functions loaded - starting the rest.";
+	diag_log "DMS: Functions loaded - starting the rest of the script.";
 };

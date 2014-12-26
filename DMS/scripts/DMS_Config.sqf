@@ -1,10 +1,14 @@
 if(isServer) then {
 	diag_log "DMS: Config starting to load..";
 	
-		DMS_UseMissions 		= true;
+	//Settings 
+	DMS_UseMissions 		= true;
+	//DMS_DetectNearWater 	= true;
 	
+	// Timers in seconds
+	//DMS_MissionMin 		= 60; 
+	//DMS_MissionMax 		= 120;
 	
-	
-	
-	DMS_Loaded = true;
+	// Finalize
+	DMS_Loaded 				= true;
 };
