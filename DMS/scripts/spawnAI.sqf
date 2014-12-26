@@ -37,21 +37,5 @@ spawnAI = {
 		_soldier disableAI "FSM";
 		_soldier allowDammage true;
 	};
-	/*
-<<<<<<< HEAD
-	
-=======
->>>>>>> origin/master
-	if (side _group != RESISTANCE) {
-	 deleteGroup _x;
-	};
-	*/
-<<<<<<< HEAD
 };
 
-
-=======
-     	};
-};
-
->>>>>>> origin/master
