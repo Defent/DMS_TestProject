@@ -7,11 +7,17 @@ Creates a soldier.. what more do we need to know?
 
 if (!isServer) exitWith {};
 
+<<<<<<< HEAD
 private ["_group", "_pos","_arrUnits","_ammountAI","DMS_Ai","_posX","_posY"];
 _pos 	= _this select 1;
 // used for patrols
 //_posX 		= _pos select 0;
 //_posY 		= _pos select 1;
+=======
+private ["_group", "_pos","_arrUnits","_ammountAI","_soldier"];
+_pos 	= _this select 1;
+	
+>>>>>>> origin/master
 	
 	// create a group for the unit
 	_group = createGroup RESISTANCE;
