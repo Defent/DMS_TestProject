@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+/* 
+Creates a soldier.. what more do we need to know?
+@FileOverlordCreatorofAllMasterCommanderAlphandtheOmega: Defent
+
+Usage: 1 parm whitch is pos so
+[_pos,_aiAmmount] spawn spawnAI.sqf;
+
+Fixed by Grim. He can code and stuff.
+*/
+
+>>>>>>> origin/master
 spawnAI = {
 	private ["_group", "_pos","_soldier"];
 	_pos  = _this select 0;
@@ -31,4 +44,8 @@ spawnAI = {
 	if (side _group != RESISTANCE) {
 	 deleteGroup _x;
 	};
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> origin/master
