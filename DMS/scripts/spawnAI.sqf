@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 =======
 /* 
 Creates a soldier.. what more do we need to know?
@@ -10,7 +10,6 @@ Usage: 1 parm whitch is pos so
 Fixed by Grim. He can code and stuff.
 */
 
->>>>>>> origin/master
 spawnAI = {
 	private ["_group", "_pos","_soldier"];
 	_pos  = _this select 0;
@@ -40,12 +39,11 @@ spawnAI = {
 		_soldier disableAI "FSM";
 		_soldier allowDammage true;
 	};
-	
+	/*
 	if (side _group != RESISTANCE) {
 	 deleteGroup _x;
 	};
-<<<<<<< HEAD
+	*/
+     	};
 };
-=======
-};
->>>>>>> origin/master
+
