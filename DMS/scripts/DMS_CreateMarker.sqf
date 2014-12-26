@@ -1,9 +1,3 @@
-
-=======
-// This looks a lot like the EMS and DZMS way of doing markers and that is true.
-// It's not a blatant copy even though it looks like it. If you feel that is them please tell me and I will change it 
-
-
 private["_mark","_name"];
 DMS_Cords = _this select 0;
 DMS_MainName = _this select 1;
