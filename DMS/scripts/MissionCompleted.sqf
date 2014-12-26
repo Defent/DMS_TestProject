@@ -1,9 +1,9 @@
 if(isServer) then {
-/*
+
 private ["_completed","_cleanup"];
 _completed = false;
 _cleanup   = false;
-*/
+
 
 	MissionCompleted = {
 	
@@ -12,7 +12,7 @@ _cleanup   = false;
 	
 	waitUntil{{isPlayer _x && _x distance _missionPos < 60  } count playableunits > 0}; 
 		
-	//_completed	 = true;
+	_completed	 = true;
 	};
 	
 	MissionCleanup = {
