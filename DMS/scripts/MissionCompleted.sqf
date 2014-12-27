@@ -11,7 +11,8 @@ _cleanup   = false;
 		_missionPos = _this select 0;
 		_cleanUp = _this select 1;
 		
-		waitUntil{{isPlayer _x && _x distance _missionPos < 30  } count playableunits > 0}; 
+
+		waitUntil{{isPlayer _x && _x distance _missionPos < 30  } count playableUnits > 0}; 
 		_missionPos spawn CleanUpFnc;
 		
 		_completed	 = true;
@@ -38,10 +39,10 @@ _cleanup   = false;
 			deleteGroup (group _this);
 			_this = nil;
 			
-			//_cleanup 	 = true;	
+			_cleanup 	 = true;	
 		};		
 	};
-	
+
 	CleanUpFnc = {
 		{
 		if (_x getVariable ["VarCleanUp",false]) then {
