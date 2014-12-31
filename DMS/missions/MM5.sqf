@@ -1,5 +1,5 @@
-private ["_crate","_pos","_missname","_aiAmmount","_missTitle","_missText","_hint"];
-
+private ["_crate","_pos","_missname","_aiAmmount","_misText","_missEnd","_group"];
+ 
 /*
 _playerClose = false;
 _mainTimer = true;
@@ -12,18 +12,25 @@ _pos = call findSafePos;
 _missname = "Main Mission 5";
 diag_log format["DMS: Main Mission 5 started at [%1]",_pos];
 
-_hint = format ["<t color='#ff0000'>Main Mission 5.</t>==============</br>Mission now starting! Check your map!"];
-[_hint] call broadcastHint;
+_misText = "<t size='1.75' align='center' color='#27612F'>Main Mission 5.
+</t>
+<br/>
+<t align='center' color='#FF0000'>------------------------------</t>
+<br/>
+<t size='1.25' color='#FFFFFF'> Mission now starting! Check your map!</t>";
+
+GlobalHint = [0,_misText];
+publicVariable "GlobalHint";
 
 
 // Spawn Marker
 [_pos,_missname] execVM "mission\scripts\DMS_CreateMarker.sqf";
 
 // Spawn Box
-_crate = createVehicle ["Box_NATO_Support_F",[(_pos select 0) - 10, _pos select 1,0],[], 0, "CAN_COLLIDE"];
-//[_crate,5] call createBox;
+_crate = createVehicle ["Box_NATO_AmmoOrd_F",[(_pos select 0) - 10, _pos select 1,0],[], 0, "CAN_COLLIDE"];
+//[_crate] call createBox;
 // [_crate, amount of weapons, amount of ammo] call createBox;
-[_crate,5] call createBox;
+[_crate] call createBox;
 
 sleep 2;
 
@@ -35,15 +42,28 @@ sleep 2;
 
 waitUntil{{isPlayer _x && _x distance _pos < 30  } count playableUnits > 0}; 
 
-_hint = format ["Mission is over, quitting mission."];
-[_hint] call broadcastHint;
+
+_missEnd = "<t size='1.75' align='center' color='#27612F'>Main Mission 1.
+</t>
+<br/>
+<t align='center' color='#FF0000'>------------------------------</t>
+<br/>
+<t size='1.25' color='#FFFFFF'> Mission has ended, good job!</t>";
+
+GlobalHint = [0,_missEnd];
+publicVariable "GlobalHint";
 
 deleteMarker "DMS_MainMarker"; 
 deleteMarker "DMS_MainDot"; 
-//_crate setDamage 1;
-deleteVehicle SpawnAI;
-{deleteVehicle _x}count units SpawnAI;
-deleteGroup SpawnAI;
+//deleteGroup _group;
+//deleteVehicle SpawnAI;
+//{deleteVehicle _x}count units SpawnAI;
+//deleteGroup SpawnAI;
 
+ 
 
-[] call selectMission;
+ 
+
+sleep 150;
+
+[] execVM "mission\scripts\selectMission.sqf";

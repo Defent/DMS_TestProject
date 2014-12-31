@@ -1,5 +1,5 @@
 private ["_crate","_pos","_missname","_aiAmmount","_missTitle","_missText","_hint"];
-
+ 
 /*
 _playerClose = false;
 _mainTimer = true;
@@ -8,7 +8,7 @@ _mainTimer = true;
 
 // associate pos with find safe pos
 _pos = call findSafePos; 
-_aiAmmount = 5;
+ 
 
 _missname = "Main Mission 10";
 diag_log format["DMS: Main Mission 10 started at [%1]",_pos];
@@ -27,8 +27,8 @@ sleep 2;
 //_crate = [_pos,40,4,2,2] execVM "mission\crates\MM_Box1.sqf";
 
 // spawn AI
-//[_pos,_aiAmmount] call SpawnAI;
-[_pos,_aiAmmount] call SpawnAI;
+//[_pos,5,4] call SpawnAI;
+[_pos,5,4] call SpawnAI;
 
 
 
@@ -40,10 +40,14 @@ _hint = format ["Mission is over, quitting mission."];
 deleteMarker "DMS_MainMarker"; 
 deleteMarker "DMS_MainDot"; 
 //_crate setDamage 1;
-deleteVehicle SpawnAI;
-{deleteVehicle _x}count units SpawnAI;
-deleteGroup SpawnAI;
+//deleteVehicle SpawnAI;
+//{deleteVehicle _x}count units SpawnAI;
+//deleteGroup SpawnAI;
 
+ 
 
-[] call selectMission;
+ 
 
+sleep 150;
+
+[] execVM "mission\scripts\selectMission.sqf";

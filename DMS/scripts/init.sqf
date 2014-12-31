@@ -5,13 +5,10 @@
 if(isServer) then {
 
 	findSafePos			= compile preprocessFileLineNumbers "mission\scripts\findSafePos.sqf";
-	// will be random boxes later..
 	createBox				= compile preprocessFileLineNumbers "mission\crates\MM_Box1.sqf";
 	DMS_CreateMarker 		= compile preprocessFileLineNumbers "mission\scripts\DMS_CreateMarker.sqf";
-	SpawnAI 			= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";
+	spawnAI 			= compile preprocessFileLineNumbers "mission\scripts\spawnAI.sqf";
 	selectMission 			= compile preprocessFileLineNumbers "mission\scripts\selectMission.sqf";
-	//MissionCompleted 		= compile preprocessFileLineNumbers "mission\scripts\MissionCompleted.sqf";
-	broadcastHint 		= compile preprocessFileLineNumbers "mission\scripts\broadcastHint.sqf";
 	
 	// not fully loaded yet
 	DMS_Loaded 			= false;
