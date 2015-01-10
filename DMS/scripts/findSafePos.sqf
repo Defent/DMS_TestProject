@@ -26,8 +26,9 @@ if(isServer) then {
 	// water if exception to be added above 
 	
 	};
-	_pos set [2,0];
-	_pos
+	// Remnants
+	//_pos set [2,0];
+	//_pos
 	//DMS_PosFound = true;
 	//DMS_PosFound = true;
 };
